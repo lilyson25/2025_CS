@@ -56,9 +56,16 @@
 | 대표적인 예  | `int`, `float`, `bool`, `struct`, `char` | `string`, `class`, `object`, `array`, `delegate` |
 | 사용 방식    | `int a = 10; int b = a;` (값 자체 복사) | `MyClass obj1 = new MyClass(); MyClass obj2 = obj1;` (참조 복사) |
 
-### 정리
+##### 정리
 - **값 형식(Value Type)**: 변수를 복사할 때 **값 자체가 복사**됨. (독립적인 데이터)
 - **참조 형식(Reference Type)**: 변수를 복사할 때 **메모리 주소가 복사**됨. (같은 데이터 참조)
 - **Stack (스택)**: 빠르게 할당되고, 함수가 끝나면 자동 해제됨.
 - **Heap (힙)**: 크기가 동적이며, 가비지 컬렉션(GC)에 의해 관리됨.
+---
+## 재귀함수
+## 자료형
+---
+## Class : custom data type
+> 절차지향 프로그래밍(입력>처리>출력) -> 객체지향 프로그래밍(물체를 지향으로 본다)  
+
 
