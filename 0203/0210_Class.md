@@ -40,3 +40,4 @@
 ##### stack 영역
 - 지역변수, 매개변수, 포인터 등이 저장됨
 - 컴파일타임에 크기 결정
+- value type(값형식) : int/ float/ bool/ string/ char/ stuct/ stack 
