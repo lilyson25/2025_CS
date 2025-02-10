@@ -67,4 +67,16 @@
 ### Class : custom data type
 > 절차지향 프로그래밍(입력>처리>출력) -> 객체지향 프로그래밍(물체를 지향으로 본다> class를 설계한다)  : sturct vs class
 
-
+```
+    class Apple
+    {
+        public static void Die() //전역함수, 미리 Code로 선언된 것이기때문에 main에서 바로 호출가능
+        {
+            Console.WriteLine("죽었ㄷ");
+        }
+        static void Main(string[] args)
+        {
+        Apple.Die();
+        }
+}
+```
