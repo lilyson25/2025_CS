@@ -7,7 +7,15 @@
 
 #### virtual
 - 부모 클래스에서 재정의할 수 있도록 허용하는 키워드
-- virtual function table 배열로 바뀜 but 성능이저하
+- virtual function table 배열로 바뀌면서 성능이저하
   
 #### override
 - 자식 클래스에서 부모의 메서드를 덮어쓰기(재정의)하는 키워드
+
+### 캡술화 Encapsulation
+
+|       | 캡술화  |  상속 |
+|public | 0       | o    |
+|protected| x |o|
+|private| x | x |
+ 
