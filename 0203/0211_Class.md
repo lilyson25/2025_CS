@@ -13,9 +13,9 @@
 - 자식 클래스에서 부모의 메서드를 덮어쓰기(재정의)하는 키워드
 
 ### 캡술화 Encapsulation
-
-|       | 캡술화  |  상속 |
-|public | 0       | o    |
+|     |캡술화|상속|
+|:----|---:|:--:|
+|public | 0 | o  |
 |protected| x |o|
 |private| x | x |
  
