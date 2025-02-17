@@ -33,14 +33,29 @@ class AData
 ```
 ---
 ### 다형성 Virtual, Override
+> public 'override' or 'virtual' void ~
+
+##### virtual
+- 부모 클래스에서 재정의할 수 있도록 허용하는 키워드
+- virtual function table 배열로 바뀌면서 성능이저하
+- 덮어서 인식하지 X, 자식이 있을 수 있다, 자식이 재정의할 수 있다
+  
+##### override
+- 자식 클래스에서 부모의 메서드를 덮어쓰기(재정의)하는 키워드, 덮어서 써라, 부모함수가 있다
+
+#### 캡술화 Encapsulation
+|     |캡술화|상속|
+|:----|---:|:--:|
+|public | 0 | o  |
+|protected| x |o|
+|private| x | x |
+
 > 다형성(polymorphism)은 글자 그대로 object 가 여러가지 모양을 가진다는 의미이고 upcasting/downcasting 으로 이루어지며
+
 > 부모형식 공간에 자식 자료를 넣을 수 있다, 실행시 알아서 부모와 자식 함수를 실행한다
 
-> 목적 : 반복문이 단순화되어 작업하기 편해짐
-
-> Virtural : 덮어서 인식하지 X, 자식이 있을 수 있다, 자식이 재정의할 수 있다
-
-> Override : 덮어서 써라, 부모함수가 있다
+> 목적 : 짧은 반복문안에 모든걸 다 넣어서 단순화되어 작업하기 편해짐
+   ![image](https://github.com/user-attachments/assets/1d42c1ae-6d05-49ca-b3ca-27b2a43b0937)
 
 > is 키워드 : 반복문에 if(monster[i] is Goblin) 이렇게 사용
 
