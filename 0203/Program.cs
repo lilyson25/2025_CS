@@ -119,9 +119,11 @@ namespace _20250203
          {
 
              Console.WriteLine(Calculate(2,3));
-         }*/
+         }
+    */
 
-    /* //*****
+    /* 
+       //*****
        //*****
        //*****
        //*****
@@ -134,7 +136,8 @@ namespace _20250203
                Console.Write('*');
            }
            Console.WriteLine();
-       }*/
+       }
+    */
 
     /* 
       //*
@@ -160,13 +163,16 @@ namespace _20250203
     {
         for (int i = 0; i < 5; i++)
         {
-            //Console.Write("*");
+         
             map[j, i] = i + 1;
         }
-        //onsole.WriteLine();
+        
     }
 
      */
+
+
+    /*
     //    *
     //   **
     //  ***
@@ -178,7 +184,7 @@ namespace _20250203
     //--***
     //-****
     //*****
-    /*
+    
                 int size = 10;
 
                 for (int j = 1; j <= size; j++)
@@ -192,9 +198,14 @@ namespace _20250203
                         Console.Write('*');
                     }
                     Console.WriteLine();
-                }*/
-    //12345678910
-    /* int[] data = new int[10];//개수가 열개
+                }
+    */
+
+
+    /*
+      
+     //12345678910
+     int[] data = new int[10];//개수가 열개
 
      string s = "Hi";
      Console.WriteLine(s);
@@ -206,41 +217,43 @@ namespace _20250203
      for (int i = 0; i < 10; i++)
      { 
          Console.Write(data[i] + ",");
-     }*/
+     }
+    */
 
 
 
-
-    //[][][][][][][][][][]
-    //[][][][][][][][][][]
-    //[][][][][][][][][][]
-    //[][][][][][][][][][]
-    //[][][][][][][][][][]
-    //[][][][][][][][][][]
-    //[][][][][][][][][][]
-    //[][][][][][][][][][]
-    //[][][][][][][][][][]
-    //[][][][][][][][][][]
     /*
-                int[,] data = new int[10, 10];
+        //[][][][][][][][][][]
+        //[][][][][][][][][][]
+        //[][][][][][][][][][]
+        //[][][][][][][][][][]
+        //[][][][][][][][][][]
+        //[][][][][][][][][][]
+        //[][][][][][][][][][]
+        //[][][][][][][][][][]
+        //[][][][][][][][][][]
+        //[][][][][][][][][][]
 
-                int number = 1;
-                for (int j = 0; j < 10; j++)
-                {
-                    for (int i = 0; i < 10; i++)
-                    {
-                        data[j, i] = number++;
-                    }
-                }
+                    int[,] data = new int[10, 10];
 
-                for (int j = 0; j < 10; j++)
-                {
-                    for (int i = 0; i < 10; i++)
+                    int number = 1;
+                    for (int j = 0; j < 10; j++)
                     {
-                        Console.Write(data[j, i].ToString() + "\t");
+                        for (int i = 0; i < 10; i++)
+                        {
+                            data[j, i] = number++;
+                        }
                     }
-                    Console.WriteLine();
-                }*/
+
+                    for (int j = 0; j < 10; j++)
+                    {
+                        for (int i = 0; i < 10; i++)
+                        {
+                            Console.Write(data[j, i].ToString() + "\t");
+                        }
+                        Console.WriteLine();
+                    }
+    */
 
 
     /* string i = "*";
@@ -257,5 +270,5 @@ namespace _20250203
      }*/
 }
 
-    
+
 
