@@ -126,45 +126,45 @@ namespace _0217
         return count;
       }
     }
-//인덱서(배열처럼 객체를 사용 가능하게 만듦)
-public T this[int index]
-{
-get
-{
-if (index >= count || index < 0)
-{
- throw new IndexOutOfRangeException("잘못된 인덱스 접근");
-}
-return objects[index];
-}
-set
-{
-if(index >=0 && index < count)
-{
-objects[index] = value; //특정위치에 값 설정가능
-}
-}
-}
-}
-//실행테스트 
-class Program
-{
-static void Main()
-{
-TDynamicArray<int> myArray = new TDynamicArray<int>();
-    //정수형 데이터를 저장하는 동적 배열 생성
-    myArray.Add(5);
-    myArray.Add(10);
-    myArray.Add(15);
-    myArray.Remove(10);
-    myArray.Insert(1,99);//1번 인덱스에 99 삽입
-
-    //배열출력
-    for (int i = 0; i<myArray.Count; i++)
+    //인덱서(배열처럼 객체를 사용 가능하게 만듦)
+    public T this[int index]
     {
-    Console.write(myArray[i] + ", "); //출력 5, 99, 15
-    
+    get
+    {
+    if (index >= count || index < 0)
+    {
+     throw new IndexOutOfRangeException("잘못된 인덱스 접근");
     }
+    return objects[index];
+    }
+    set
+    {
+    if(index >=0 && index < count)
+    {
+    objects[index] = value; //특정위치에 값 설정가능
+    }
+    }
+    }
+    }
+    //실행테스트 
+    class Program
+    {
+      static void Main()
+      {
+      TDynamicArray<int> myArray = new TDynamicArray<int>();
+      //정수형 데이터를 저장하는 동적 배열 생성
+      myArray.Add(5);
+      myArray.Add(10);
+      myArray.Add(15);
+      myArray.Remove(10);
+      myArray.Insert(1,99);//1번 인덱스에 99 삽입
+  
+      //배열출력
+      for (int i = 0; i<myArray.Count; i++)
+      {
+      Console.write(myArray[i] + ", "); //출력 5, 99, 15
+      
+      }
   }
 }
 
