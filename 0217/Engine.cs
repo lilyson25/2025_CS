@@ -111,7 +111,7 @@ namespace _0217
             }
         }
 
-        // 사용자 입력을 처리하는 함수
+      // 사용자 입력을 처리하는 함수
         public void ProcessInput()
         {
             Input.Process();  // 입력 클래스에서 키 입력 처리
