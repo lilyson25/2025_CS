@@ -53,13 +53,12 @@ namespace _0217
       ~TDynamicArray()//소멸자
       {}
 
-
     //데이터 추가하기(add)
     public void Add(T inObject)
     {
     if(count >= objects.Legnth)
     {
-    ExtendSpace();
+      ExtendSpace();
     }
     objects[count] = inObject; //현재 위치에 데이터 저장
     count++;
@@ -71,11 +70,60 @@ namespace _0217
       T[] newObject = new T[Objects.Length * 2];
       for(int i = 0; i< objects.Length; ++i)
       {
-      newObject[i] = objects[i];
+         newObject[i] = objects[i];
       }
       objects = null; //기존 배열에 null을 넣어 삭제
       objects = newObject; //새 배열을 기존 배열로 교체      
       }
+
+     //데이터 삭제(값을 찾아서)
+      public bool Remove(T removeObject)
+      {
+        for (int i = 0; i < count; ++i)
+          if(removeObject.Equals(objects[i])) //값이 일치하면
+          {
+          return RemoveAt(i);
+          }
+       }
+        return false; //값을 찾지 못하면 삭제 실패
+      }
+    //특정위치 데이터삭제(앞으로 당겨서 빈공간 없앰)
+    public bool RemoveAt(int index)
+    {
+      if(index >= 0 && index < count) //인덱스가 유용한 경우
+      {
+        for (int i = index; i < count -1; ++i)
+        {
+          objects[i] = objects[i+1]; //한칸씩 앞으로 이동
+        }
+        count--; //데이터개수감소
+        return true;
+      }
+      return false; //잘못된 인덱스면 삭제 실행
+    }
+   // 특정위치에 데이터 삽입
+    public void Insert(int insertIndex, T value)
+    {
+      if (count >= objects.Legnth)//공간부족하면 확장
+      {
+        ExtendSpace();
+      }
+      for (int i = count; i> insertIndex; --i)
+      {
+        objects[i] = objects[i-1]; //뒤쪽 데이터를 한칸씩 뒤로 이동
+      }
+      objects[insertIndex] = value; //지정된 위치에 값 삽입
+      count++;
+    }
+    // 현재 데이터 개수 반환(읽기 전용 속성)
+    public int Count
+    {
+      get
+      {
+        return count;
+      }
+    }
+//인덱스(배열처럼 객체를 사용 가능하게 만듦)
 
    
 
