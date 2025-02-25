@@ -150,5 +150,30 @@ namespace L20250225
     }
 }
 ```
-# absract 클래스 (추상클래스)
+## absract 클래스 (추상클래스)
 > 공통된 기능을 제공하고 일부 메서드는 자식 클래스에서 구현하도록 강제.
+
+## 더블 버퍼링 :  backBuffer, frontBuffer사용해서 화면 깜빡임(flickering) 현상을 줄이고 부드러운 렌더링을 위해 사용하는 기법
+> backBuffer(백 버퍼): 연산 중인 임시 버퍼 (보이지 않음)
+> frontBuffer(프론트 버퍼): 실제 화면에 출력하는 버퍼
+
+> 📌 더블 버퍼링(Flip) 과정
+* 1. backBuffer에 새로운 프레임 데이터를 저장
+* 2. frontBuffer와 backBuffer를 비교
+* 3. 값이 다르면 frontBuffer를 갱신하고 콘솔에 출력
+* 4. 이 과정을 반복하여 화면 깜빡임 없이 부드럽게 갱신
+```
+ for (int Y = 0; Y < 20; ++Y)
+ {
+     for (int X = 0; X < 40; ++X)
+     {
+         if (Engine.frontBuffer[Y, X] != Engine.backBuffer[Y, X])
+         {
+             Engine.frontBuffer[Y, X] = Engine.backBuffer[Y, X];
+             Console.SetCursorPosition(X, Y);
+             Console.Write(backBuffer[Y, X]);
+         }
+     }
+ }
+```
+> 
