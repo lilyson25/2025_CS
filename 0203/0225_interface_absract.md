@@ -176,4 +176,42 @@ namespace L20250225
      }
  }
 ```
-> 
+## Time 클래스
+> 이전 프레임과 현재 프레임 사이의 시간차이(Delta Time)을 계산하여 게임이나 애니메이션 업데이트 시 활용 할 수 있다
+
+> 게임 내의 물체를 시간에 따라 일정 속도로 이동시키기 위해 사용하는 코드 
+```
+Time을 활용하는 주요 방법
+1. 프레임 간 이동량 조절 (위 예제처럼 speed * deltaTime 활용)
+2. 애니메이션 타이밍 조정 (일정 시간 후 실행하는 기능 만들 때)
+3. 시간 제한 기능 (예: if (Time.deltaTime > 5000) { 실행 })
+4. 물리 연산을 일정하게 유지 (컴퓨터 성능에 따라 움직임 속도가 달라지는 문제 방지)
+```
+> 예시
+```
+class Program
+{
+    static float position = 0f;
+    static float speed = 50f;  // 초당 이동 속도
+
+    static void Main()
+    {
+        Time.Update();  // 초기화    
+        while (true)  // 무한 루프 (게임 루프처럼 사용)
+        {
+            Time.Update();  // 매 프레임 시간 업데이트
+            MoveObject();
+            Console.WriteLine($"Position: {position}");
+            System.Threading.Thread.Sleep(100);  // 100ms마다 업데이트→ 루프 속도를 조절 (100ms 마다 실행)
+        }
+    }
+
+    static void MoveObject()
+    {
+        position += speed * (Time.deltaTime / 1000f);  
+        // deltaTime이 ms 단위이므로 초 단위로 변환
+    }
+}
+```
+> Time.deltaTime을 이용하는 이유 -> 💡 프레임 속도(FPS)가 달라도 같은 속도로 이동하기 위해!
+  >> 프레임(FPS)이 다르면 Time.deltaTime 값도 달라지지만, speed * Time.deltaTime 방식으로 보정하면 동일한 속도를 유지할 수 있음!
