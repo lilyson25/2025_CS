@@ -169,3 +169,91 @@ namespace _0217
 }
 
 ```
+### Dynamic배열
+```
+using System;
+using System.Collections.Generic;
+
+namespace _0225
+{
+    class DynamicArray<T>
+    {
+        protected T[] data;
+        protected int count;
+
+        // 생성자
+        public DynamicArray() // 생성자 초기화
+        {
+            data = new T[4]; // 초기에 배열 크기를 작은 값으로 설정 (최소 크기 4)
+            count = 0;
+        }
+
+        public void Add(T newData)
+        {
+            if (count >= data.Length) // 배열 크기가 부족할 때 배열을 늘린다.
+            {
+                T[] newArray = new T[data.Length * 2]; // 새로운 배열 크기
+                Array.Copy(data, newArray, data.Length); // 기존 데이터를 새 배열로 복사
+                data = newArray; // data가 새 배열을 가리키도록 설정
+            }
+            data[count] = newData; // 데이터를 배열에 추가
+            count++; // count 증가
+        }
+
+        public void RemoveAt(int index)
+        {
+            if (index < 0 || index >= count) return; // 유효한 인덱스가 아닐 경우 리턴
+            for (int i = index; i < count - 1; i++) // 마지막 요소는 처리하지 않음
+            {
+                data[i] = data[i + 1]; // 다음 요소를 현재 위치로 이동
+            }
+            count--; // 개수 감소
+        }
+
+        public T this[int index]
+        {
+            get
+            {
+                if (index < 0 || index >= count) throw new IndexOutOfRangeException(); // 범위 초과 체크
+                return data[index];
+            }
+            set
+            {
+                if (index < 0 || index >= count) throw new IndexOutOfRangeException(); // 범위 초과 체크
+                data[index] = value;
+            }
+        }
+
+        public int Count
+        {
+            get
+            {
+                return count;
+            }
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // DynamicArray 객체 생성
+            DynamicArray<int> dynamicArray = new DynamicArray<int>();
+            dynamicArray.Add(1);
+            dynamicArray.Add(2);
+            dynamicArray.Add(3);
+            dynamicArray.Add(4);
+
+            // 특정 인덱스 제거
+            dynamicArray.RemoveAt(2);
+
+            // 결과 출력
+            for (int i = 0; i < dynamicArray.Count; i++)
+            {
+                Console.WriteLine(dynamicArray[i]);
+            }
+        }
+    }
+}
+
+```
