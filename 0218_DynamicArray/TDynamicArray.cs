@@ -19,7 +19,7 @@ namespace _0217
 
         }
 
-        public void Add(T inObject)
+        public void Add(objects inObject)
         {
             if (count >= objects.Length)
             {
