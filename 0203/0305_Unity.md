@@ -93,3 +93,8 @@ Yaw: Y
       Debug.DrawLine(transform.position, Camera.main.transform.position, Color.red);
   }
 ```
+### 선형보간 & 카메라 LagTime 
+> Vector3.Lerp(a, b, Time.deltaTime);  매 프레임마다 a와 b의 "중간지점인 c로 이동"할 것이다  
+```
+transform.position = Vector3.Lerp(transform.position, player.position, Time.deltaTime * positionLagTime);
+```
