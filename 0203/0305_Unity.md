@@ -45,7 +45,7 @@ public class SimpleMovement : MonoBehaviour
 }
 ```
 
-### Unity 개념정리
+## Unity 개념정리
 > Instance : Hierarchy에 있는 오브젝트들
 
 > Physics.Raycast > cast는 충돌체크의 의미
@@ -77,4 +77,19 @@ SpawnPoint = GameObject.FindGameObjectsWithTag("SpawnPoint").GetComponentsInChil
 //같은 방식 transform.GetChild()
 //여러개라 배열일때s를 붙이면 됨
 }
+```
+### 항공기의 기본 축 
+![image](https://github.com/user-attachments/assets/ca725db1-741b-497f-a6bd-f3d11d57ff61)
+```
+Roll: Z
+Pitch: X
+Yaw: Y
+```
+> 카메라 스크립트에, 셀카봉 궤적 표시
+```
+  void LateUpdate() //update가 아닌, LateUpdate로 카메라값을 넣기 좋은 순서에 자리해줌
+  {
+      transform.position = player.position;
+      Debug.DrawLine(transform.position, Camera.main.transform.position, Color.red);
+  }
 ```
