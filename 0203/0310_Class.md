@@ -127,16 +127,31 @@ namespace L20250217
 
 # 연산자
 ### 산술/ 비교/ 논리/ 연산자
-### 삼향연산자 : 불_표현식 ? 참 : 거짓
+### 삼향연산자 (? : ) 
+> ?: 조건문이 참이면 첫 번째 값을 반환, 거짓이면 두 번째 값을 반환
 > if 조건문과 switch 조건문 이외에도 조건을 구분할 때 사용할 수 있는 삼항 연산자
-> 참 : 거짓 = 참일경우 실행할 것 : 거짓일 경우 실행할 것
-```
-// 참과 거짓 위치에 불 자료형 사용
-Console.WriteLine(number % 2 == 0 ? true : false);
+> condition ? value1 : value2 ---> condition이 true이면 value1, false이면 value2
 
-// 참과 거짓 위치에 문자열 자료형 사용
-Console.WriteLine(1 > 0 ? "가나다" : "ABC");
+### Optional Chaining( ?. ?? ) 연산자 
+> ?? 연산자는 주로 null을 처리할 때 사용하고, ?:는 일반적인 조건을 처리하는 데 사용
 ```
+string name = person?.Name ?? "Unknown";
+//1. person?.Name: person이 null이 아니면 person.Name을 반환하고, person이 null이면 null을 반환합니다.
+//2. ?? "Unknown": 만약 person?.Name이 null이라면 "Unknown"을 반환합니다.
+```
+```
+변수?();
+//변수명 뒤에 ?가 붙으면 if(00 = null){}가 생략되고 간략하게 쓸 수 있다. null일때~
+```
+### 논리연산자 &&, ||, !
+```
+bool a = true;
+bool b = false;
+Console.WriteLine(a && b);  // Output: False
+Console.WriteLine(a || b);  // Output: True
+Console.WriteLine(!a);      // Output: False
+```
+
 # 배열
 ### Array -> 탐색
 ```
@@ -168,6 +183,24 @@ static void Main(string[] arg)
 > 한가지 일만한다
 > 다른 컴포넌트랑 상관없이 동작하게 만든다 (결합성이 낮게 한다)
 
-# delegate (람다식이 있으면, delegate가 쓰이고 잇다..)
+# delegate (람다식이 있으면, delegate가 쓰이고 잇다..) -> Socket
 > 익명함수() => {}
+>
+```
+DelegateTest t = new DelegateTest(A);
+t = t + A;
+t += B;
+t -= A;
+t();
+
+//A A B -> 마지막에 -A한번 더 해준다 
+```
+
+> delegate앞에 **event**가 붙는 문법
+  - delegate명으로는 직접 실행이 안됨
+```
+public event DelegateTest EventHandler;
+public EventHandler eventHandler;
+```
+
 
