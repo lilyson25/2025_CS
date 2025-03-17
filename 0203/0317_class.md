@@ -1,4 +1,4 @@
-# FSM 유한상태기계 
+# FSM 유한상태기계 : Unity animator
 # JSON : JsonUtility 클래스를 사용하여 Unity 오브젝트를 JSON 포맷으로 상호 전환
 > Class를 Instance라고 하는데, 이것들을 정렬할때 우리는 Serialize(직렬화)라고 한다
 
